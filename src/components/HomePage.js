@@ -1,4 +1,3 @@
-// /src/components/HomePage.js
 import React, { useEffect, useState } from "react";
 import { getHomeData } from "../services/apiService";
 import "../styles/homePage.css";
@@ -8,6 +7,7 @@ const HomePage = ({ token }) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   useEffect(() => {
     if (token) {
@@ -35,13 +35,17 @@ const HomePage = ({ token }) => {
 
   const { greeting, name, saldo, point, qrcode, banner } = data.result;
 
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
   return (
     <div className="home-page">
       {error && <p className="error-message">{error}</p>}
 
       <div className="homepage-container">
         <header className="header">
-          <img src={logo} alt="logo" className="logo" />
+          <img src={logo} alt="logo" className="logo" onClick={togglePopup} />
         </header>
 
         <div className="user-info-card">
@@ -72,6 +76,16 @@ const HomePage = ({ token }) => {
           <p className="view-all">View all</p>
         </div>
       </div>
+
+      {/* Pop-up */}
+      {isPopupVisible && (
+        <div className="popup-overlay" onClick={togglePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <img src={logo} alt="logo" className="logo" />
+            <button onClick={togglePopup}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
