@@ -5,13 +5,12 @@ import "../styles/menuPage.css";
 const MenuPage = ({ token }) => {
   const [menu, setMenu] = useState([]);
   const [error, setError] = useState("");
-  const categoryRefs = useRef([]); // Array to store refs for each category section
+  const categoryRefs = useRef([]);
 
   useEffect(() => {
     if (token) {
       getMenuData(token)
         .then((response) => {
-          // Menggunakan result.categories dari response API
           setMenu(response.result.categories);
         })
         .catch((err) => setError("Failed to load menu data."));
@@ -37,22 +36,22 @@ const MenuPage = ({ token }) => {
 
   return (
     <div className="menu-page">
-      <div className="menu-container">
-        <header className="menu-header">
-          <h1>MENU</h1>
-          <div className="tab-menu">
-            {menu.map((category, index) => (
-              <button
-                key={index}
-                className="tab"
-                onClick={() => handleScrollToCategory(index)}
-              >
-                {category.category_name}
-              </button>
-            ))}
-          </div>
-        </header>
+      <header className="menu-header">
+        <h1>MENU</h1>
+        <div className="tab-menu">
+          {menu.map((category, index) => (
+            <button
+              key={index}
+              className="tab"
+              onClick={() => handleScrollToCategory(index)}
+            >
+              {category.category_name}
+            </button>
+          ))}
+        </div>
+      </header>
 
+      <div className="menu-content">
         {menu.map((category, index) => (
           <section
             key={index}

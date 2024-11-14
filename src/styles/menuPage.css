@@ -1,20 +1,44 @@
 .menu-page {
   overflow-x: hidden;
-  padding: 20px 20px 60px 20px;
+  padding: 5px 20px 20px 20px;
+  position: relative;
+}
+
+.menu-page h1 {
+  display: flex;
 }
 
 .menu-container {
   width: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.menu-header h1 {
-  text-align: center;
+.menu-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #f5f5f5;
+  z-index: 10;
+  padding: 10px 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-content {
+  margin-top: 80px;
+  overflow-y: auto;
+  padding-top: 20px;
+  max-height: calc(100vh - 80px);
 }
 
 .tab-menu {
   display: flex;
-  width: 100px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
