@@ -1,0 +1,128 @@
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.homepage-container {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 0;
+}
+
+.header {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.logo {
+  height: 30px;
+}
+
+/* User Info Card */
+.user-info-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.greeting {
+  font-size: 14px;
+  color: #666;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.balance-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.balance,
+.points {
+  text-align: center;
+}
+
+.balance p:first-child,
+.points p:first-child {
+  font-size: 12px;
+  color: #888;
+}
+
+.balance-amount {
+  font-size: 16px;
+  color: #333;
+}
+
+.points-amount {
+  font-size: 16px;
+  color: green;
+}
+
+/* Main Banner */
+.main-banner {
+  margin: 20px 0;
+}
+
+.banner-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Content */
+.content {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+.view-all {
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #666;
+}
+
+.nav-button img {
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.nav-button span {
+  font-size: 12px;
+}
